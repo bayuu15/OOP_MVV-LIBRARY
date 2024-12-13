@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "D:/kerkom"
+		},
+		{
+			"path": "../../methods"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "marketplace-xi-pplg-ii"
+	}
+}
