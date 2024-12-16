@@ -31,7 +31,7 @@ class AuthController extends Controller
     {
         if (count($_POST) > 0) {
 
-            $username = $_POST($_POST["username"]);
+            $username = htmlspecialchars($_POST["username"]);
             $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
             $encryptedPassword = sha1($password);
 
@@ -39,11 +39,11 @@ class AuthController extends Controller
                 $_SESSION['error'] = "All fields me be filled!";
                 $_SESSION['username'] = $username;
                 header('location: /register');
-                return;
+                exit();
             }
 
-            $user = new User($username, $password, 1);
-            $user->registerUser();  
+            // $user = new User($username, $password, 1);
+            // $user->registerUser();  
         }
         return self::view("views/register.php");
     }
@@ -51,6 +51,8 @@ class AuthController extends Controller
 
 if ($uri == '/login') {
     return AuthController::login();
-}
-
+} 
+    
 AuthController::register();
+
+

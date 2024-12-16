@@ -3,9 +3,9 @@ if (!defined('SECURE_ACCESS')) {
     die('Direct access not permitted');
 }
 
-if (isset($_SESSION['is_login']) == false) {
-    header("location: /login");
-}
+// if (isset($_SESSION['is_login']) == false) {
+//     header("location: /login");
+// }
 
 include('templates/header.php') ?>
 
@@ -28,7 +28,7 @@ include('templates/header.php') ?>
                 </div>
             <?php endif ?>
             <form method="POST" action="register">
-                <div class="input-group mb-25">
+                <!-- <div class="input-group mb-25">
                     <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     <input
                         type="text"
@@ -36,7 +36,7 @@ include('templates/header.php') ?>
                         placeholder="Name"
                         name="name"
                         value="<?= isset($_SESSION['name']) ? $_SESSION['name'] : '' ?>">
-                </div>
+                </div> -->
                 <div class="input-group mb-25">
                     <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                     <input

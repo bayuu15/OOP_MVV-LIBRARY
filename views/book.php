@@ -16,18 +16,7 @@ if (!defined('SECURE_ACCESS')) {
   }
 ?>
 
-<?php
-session_start();
-require_once 'config/database.php';
 
-// if (!isset($_SESSION['id_user'])){
-//   header('')
-// }
-
-$nama_buku = $pdo->real_escape_string($_POST['id_buku']);
-$tgl_peminjaman = date($_POST['tgl_peminjaman']);
-$tgl_pengembalian = date($_POST['tgl_pengembalian']);
-?>
 <html lang="en">
 
 <head>
@@ -131,8 +120,8 @@ $tgl_pengembalian = date($_POST['tgl_pengembalian']);
           <th>Author</th>
           <th>Year</th>
           <th>
-            <button type="button" class="button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Pinjam</button>
-
+            <!-- <button type="button" class="button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></button> -->
+            <a href="/pinjaman" type="button" class="button btn btn-primary">Pinjam Buku </a>
           </th>
         </tr>
       <tbody>
@@ -142,7 +131,7 @@ $tgl_pengembalian = date($_POST['tgl_pengembalian']);
             <th><?= $book->getTitle() ?></th>
             <th><?= $book->getAuthor() ?></th>
             <th><?= $book->getYear() ?></th>
-            <!-- <th><button class="button btn btn-primary" href="/home">Pinjam buku</button></th> -->
+            <!-- <th><button class="button btn btn-primary" href="/home"> buku</button></th> -->
            
           </tr>
         </tbody>
@@ -152,7 +141,7 @@ $tgl_pengembalian = date($_POST['tgl_pengembalian']);
   </div>
 
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">x`
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -195,10 +184,10 @@ $tgl_pengembalian = date($_POST['tgl_pengembalian']);
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
-<script>
+<!-- <script>
   $(function(){
     $('#tgl_peminjaman').datepicker({
       dateFormat :"dd/mm/yy",
@@ -216,7 +205,7 @@ $tgl_pengembalian = date($_POST['tgl_pengembalian']);
       dateYear : true
     }); 
   });
-</script>
+</script> -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>

@@ -4,11 +4,11 @@ if (!defined('SECURE_ACCESS')) {
     die('Direct access not permitted');
 }
 
-if (isset($_SESSION['is_login']) == false){
-    header('location: /login');
-}
+// if (isset($_SESSION['is_login']) == false){
+//     header('location: /login');
+// }
 
-include("templates/header.php") ?>
+// include("templates/header.php") ?>
 
 <!DOCTYPE html>
 
@@ -33,7 +33,14 @@ if (!defined('SECURE_ACCESS')){
       height: 100px;
       color: white;
       text-align: center;
+      
       }   
+          .card-group{
+        gap: 20px;
+        margin: 20px;
+        width: 40%;
+     
+      }
    
       
 
@@ -47,8 +54,55 @@ if (!defined('SECURE_ACCESS')){
     <h1>LIBRARY</h1>
   </div>
 
-    <div>
-      <h1>HALAMAM MEMBERSHIP</h1>
+    <div style="text-align:center">
+      <h1>HALAMAN MEMBERSHIP</h1>
     </div>
+
+     <!--  <div class="container row" style="width: 18rem; ">
+    <div class="Book">
+      <div class="card">
+      <img src="views/foto1.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Search Book</h5>
+        <a href="book.php" class="btn btn-primary">Click</a>
+      </div>
+  
+      
+      <div class="Book-1">
+      <div class="card">
+      <img src="views/foto1.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Visitor</h5>
+        <a href="/visitor" class="btn btn-primary">Click</a>
+      </div>
+  
+     
+    <div class="Book">
+      <div class="card">
+      <img src="views/foto1.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Membership</h5>
+        <a href="/membership" class="btn btn-primary">Click</a>
+      </div> -->
+
+    <div class="card-group" >
+      <div class="card" >
+        <img src="views/foto1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">1 Bulan</h5>
+          <p class="card-text">Rp.50.000,00</p>
+                  <a href="/book" class="btn btn-primary">Click</a>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="views/foto1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">3 Bulan</h5>
+                  <p class="card-text">Rp.100.000,00</p>
+                  <a href="/membership" class="btn btn-primary">Click</a>
+        </div>
+      </div>
+  </div>
 </body>
 </html>
